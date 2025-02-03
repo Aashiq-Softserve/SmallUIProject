@@ -2,73 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dessert Menu</title>
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product list with cart</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <div class="menu-section">
+      <h1>Desserts</h1>
+      <div class="dessert-grid">
+        <!-- Dessert cards will be dynamically generated -->
+      </div>
+    </div>
 
-  Desserts
-
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
-
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
-
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
-
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
-
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
-
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
-
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
-
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
-
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
-
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="cart-section">
+      <div class="cart-container">
+        <h2>Your Cart (<span class="cart-count">0</span>)</h2>
+        <div class="empty-cart">
+          <!-- Empty cart SVG will be inserted here -->
+          <p>Your added items will appear here</p>
+        </div>
+        <div class="cart-items">
+          <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-total">
+          <h3>Order Total</h3>
+          <p class="total-amount">$0.00</p>
+        </div>
+        <div class="delivery-info">
+          <!-- Carbon neutral SVG will be inserted here -->
+          <p>This is a carbon-neutral delivery</p>
+        </div>
+        <button class="confirm-order">Confirm Order</button>
+      </div>
+    </div>
   </div>
+
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+        <!-- SVG will be inserted here -->
+        <h2>Order Confirmed</h2>
+        <p>We hope you enjoy your food!</p>
+        <div class="order-summary">
+            <!-- Order items will be dynamically inserted here -->
+        </div>
+        <div class="order-total">
+            <span>Order Total</span>
+            <span class="modal-total">$0.00</span>
+        </div>
+        <button class="start-new-order">Start New Order</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

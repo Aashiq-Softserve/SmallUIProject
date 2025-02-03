@@ -1,12 +1,9 @@
-// Add this function at the top level of your script
 function initializeSVGs() {
-    // Replace empty cart SVG with your illustration-empty-cart.svg
     document.querySelector('.empty-cart').innerHTML = `
         <img src="./assets/images/illustration-empty-cart.svg" alt="Empty cart">
         <p>Your added items will appear here</p>
     `;
 
-    // Replace eco delivery SVG with your icon-carbon-neutral.svg
     document.querySelector('.delivery-info').innerHTML = `
         <img src="./assets/images/icon-carbon-neutral.svg" alt="Carbon neutral">
         <p>This is a carbon-neutral delivery</p>
@@ -14,7 +11,6 @@ function initializeSVGs() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize SVGs
     initializeSVGs();
     
     const cart = {
@@ -22,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         total: 0
     };
 
-    // Load and display products from data.json
     fetch('./data.json')
         .then(response => response.json())
         .then(desserts => {

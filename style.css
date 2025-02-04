@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #ffdab9;
+    background-color: #ffff;
     padding: 20px;
 }
 
@@ -26,8 +26,11 @@ h1 {
 
 .dessert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .dessert-card {
@@ -63,6 +66,7 @@ h1 {
 .dessert-info h3 {
     margin: 5px 0;
     color: #1d1d1d;
+    font-size: 14px;
 }
 
 .price {
@@ -78,17 +82,19 @@ h1 {
     width: 100%;
     padding: 12px;
     background: white;
-    color: #c14817;
+    color: black;
     font-weight: 500;
     cursor: pointer;
     border-radius: 2em;
-    width: 10em;
-    margin-left: 35%;
-    border: peachpuff solid 1px;
+    width: 12em;
+    border: orange solid 1px;
+    position: relative;
+    left: 3em;
+    
 }
 
 .add-to-cart:hover {
-    background-color: #8295b3;
+    background-color: wheat;
 }
 
 .add-to-cart img {
@@ -108,6 +114,11 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
+}
+
+.cart-container h2{
+    color: #c14817;
 }
 
 .empty-cart {
@@ -150,6 +161,12 @@ h1 {
 .cart-item-details p {
     color: #737373;
     font-size: 0.9rem;
+    display: inline-flex;
+}
+
+.cart-item-details span {
+    padding-inline: 1rem;
+    font-weight: 400;
 }
 
 .cart-item-total {
@@ -158,13 +175,26 @@ h1 {
     gap: 10px;
 }
 
+.cart-total h3{
+    font-size: 10px;
+    
+}
+
+.q-colour{
+    color: #c14817;
+}
+
 .delete-item {
+    position: relative;
     background: none;
     border: none;
     color: #737373;
     font-size: 1.2rem;
     cursor: pointer;
     padding: 4px 8px;
+    left: 4em;
+    border: #1d1d1d solid;
+    border-radius: 100%;
 }
 
 .delete-item:hover {
@@ -172,11 +202,12 @@ h1 {
 }
 
 .cart-total {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .delivery-info {
@@ -202,7 +233,7 @@ h1 {
     background: #c14817;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 2em;
     font-weight: 600;
     cursor: pointer;
 }
@@ -227,7 +258,10 @@ h1 {
     }
     
     .dessert-grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1em;
+        grid-row-gap: 100px;
     }
 }
 
@@ -303,6 +337,7 @@ h1 {
 .order-summary {
     margin: 30px 0;
     text-align: left;
+    background-color: whitesmoke;
 }
 
 .order-item {
@@ -355,7 +390,7 @@ h1 {
     padding: 15px;
     background: #c14817;
     color: white;
-    border: none;
+    border: solid #c14817;
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
@@ -399,7 +434,7 @@ h1 {
 .cart-controls {
     position: relative;
     top: -1.5em;
-    /* padding: 8px; */
+    padding: 8px;
 }
 
 .quantity-controls {
@@ -411,14 +446,18 @@ h1 {
     border-radius: 4px;
     margin: 8px;
     border-radius: 2em;
-    width: 8em;
-    margin-left: 9em;
-    margin-top: -.1%;
+    width: 10em;
+    height: 3em;
+    position: relative;
+    left: 15%;
+    top:-.5em;
 }
 
 .quantity-btn {
     background: none;
-    border: none;
+    border: white solid;
+    border-radius: 100%;
+    width: 2em;
     cursor: pointer;
     display: flex;
     align-items: center;

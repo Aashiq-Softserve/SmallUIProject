@@ -101,19 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function addToCart(dessert) {
-        const existingItem = cart.items.find(item => item.id === dessert.id);
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.items.push({
-                ...dessert,
-                quantity: 1
-            });
-        }
-        updateCart();
-    }
-
     function updateCart() {
         const cartItems = document.querySelector('.cart-items');
         const emptyCart = document.querySelector('.empty-cart');
@@ -129,11 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="cart-item-info">
                         <div class="cart-item-details">
                             <h4>${item.name}</h4>
-                            <p>${item.quantity}x @ $${item.price.toFixed(2)}</p>
+                            <p><span class="q-colour">${item.quantity}x</span> @ $${item.price.toFixed(2)}</p>
+                            <span>$${(item.quantity * item.price).toFixed(2)}</span>
                         </div>
                         <div class="cart-item-total">
                             <button class="delete-item" data-id="${item.id}">×</button>
-                            <span>$${(item.quantity * item.price).toFixed(2)}</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -191,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="order-item-details">
                         <h4>${item.name}</h4>
-                        <p>${item.quantity}x @ $${item.price.toFixed(2)}</p>
+                        <p class="quantity">${item.quantity}x @ $${item.price.toFixed(2)}</p>
                     </div>
                     <span class="order-item-total">$${(item.quantity * item.price).toFixed(2)}</span>
                 </div>

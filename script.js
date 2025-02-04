@@ -40,13 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="dessert-image">
                     <img src="${dessert.image}" alt="${dessert.name}">
                 </div>
-                <div class="dessert-info">
-                    <span class="category">${dessert.category}</span>
-                    <h3>${dessert.name}</h3>
-                    <p class="price">$${dessert.price.toFixed(2)}</p>
-                </div>
                 <div class="cart-controls">
-                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="add-to-cart"><img src="assets/images/icon-add-to-cart.svg" alt="cart">Add to Cart</button>
                     <div class="quantity-controls hidden">
                         <button class="quantity-btn decrement">
                             <img src="assets/images/icon-decrement-quantity.svg" alt="-">
@@ -56,6 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             <img src="assets/images/icon-increment-quantity.svg" alt="+">
                         </button>
                     </div>
+                <div class="dessert-info">
+                    <span class="category">${dessert.category}</span>
+                    <h3>${dessert.name}</h3>
+                    <p class="price">$${dessert.price.toFixed(2)}</p>
+                </div>
+                
                 </div>
             `;
             
@@ -155,13 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
         totalAmount.textContent = `$${cart.total.toFixed(2)}`;
     }
 
-    // Add this new function to handle item removal
+    //function to handle item removal
     function removeFromCart(itemId) {
         cart.items = cart.items.filter(item => item.id !== itemId);
         updateCart();
     }
 
-    // Add this new function to update item quantity in cart
+    //function to update item quantity in cart
     function updateItemInCart(dessert, quantity) {
         const existingItem = cart.items.find(item => item.id === dessert.id);
         if (existingItem) {

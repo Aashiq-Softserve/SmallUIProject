@@ -77,13 +77,14 @@ h1 {
 .add-to-cart {
     width: 100%;
     padding: 12px;
-    background: none;
+    background: white;
     color: #c14817;
     font-weight: 500;
     cursor: pointer;
     border-radius: 2em;
     width: 10em;
-    margin-left: 30%;
+    margin-left: 35%;
+    border: peachpuff solid 1px;
 }
 
 .add-to-cart:hover {
@@ -396,7 +397,8 @@ h1 {
 }
 
 .cart-controls {
-    border-top: 1px solid #eee;
+    position: relative;
+    top: -1.5em;
     /* padding: 8px; */
 }
 
@@ -410,7 +412,7 @@ h1 {
     margin: 8px;
     border-radius: 2em;
     width: 8em;
-    margin-left: 30%;
+    margin-left: 9em;
     margin-top: -.1%;
 }
 

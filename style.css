@@ -444,3 +444,8 @@ h1 {
 .add-to-cart.hidden {
     display: none;
 }
+
+.Order-confirmed{
+    position: relative;
+    right:50%;
+}
